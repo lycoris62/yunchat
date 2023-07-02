@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import me.yunchat.domain.channel.domain.Channel;
 import me.yunchat.domain.model.BaseEntity;
 
 import java.time.LocalDateTime;
@@ -26,11 +27,19 @@ public class User extends BaseEntity {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "now_channel")
+    private Channel nowChannel;
+
     @Column(name = "last_login_time")
     private LocalDateTime lastLoginTime;
 
     public void updateLastLoginTime(LocalDateTime lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
+    }
+
+    public void setNowChannel(Channel channel) {
+        this.nowChannel = channel;
     }
 
     @Builder

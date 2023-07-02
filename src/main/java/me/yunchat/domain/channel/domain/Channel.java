@@ -6,8 +6,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.yunchat.domain.model.BaseEntity;
+import me.yunchat.domain.user.domain.User;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,6 +23,10 @@ public class Channel extends BaseEntity {
 
     @Column(name = "channel_name", nullable = false, unique = true)
     private String channelName;
+
+    @OneToMany(mappedBy = "nowChannel")
+    @Column(name = "now_users")
+    private List<User> nowUsers;
 
     @Column(name = "last_chat_time")
     private LocalDateTime lastChatTime;
