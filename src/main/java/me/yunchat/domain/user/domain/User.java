@@ -11,13 +11,13 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "users")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false, unique = true)
+    @Column(name = "user_id", nullable = false)
     private Long id;
 
     @Column(name = "nickname", nullable = false, unique = true)
@@ -29,9 +29,8 @@ public class User extends BaseEntity {
     @Column(name = "last_login_time")
     private LocalDateTime lastLoginTime;
 
-    public User updateLastLoginTime(LocalDateTime lastLoginTime) {
+    public void updateLastLoginTime(LocalDateTime lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
-        return this;
     }
 
     @Builder
