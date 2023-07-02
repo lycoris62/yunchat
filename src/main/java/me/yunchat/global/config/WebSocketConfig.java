@@ -1,4 +1,4 @@
-package me.yunchat.domain.stomp.config;
+package me.yunchat.global.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
