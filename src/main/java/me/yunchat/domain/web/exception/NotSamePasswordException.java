@@ -1,14 +1,14 @@
-package me.yunchat.domain.user.exception;
+package me.yunchat.domain.web.exception;
 
 import lombok.Getter;
 
 @Getter
 public class NotSamePasswordException extends RuntimeException {
 
-    private final UserErrorCode errorCode;
+    private final LoginErrorCode errorCode;
     private final String detailMessage;
 
-    public NotSamePasswordException(UserErrorCode errorCode) {
+    public NotSamePasswordException(LoginErrorCode errorCode) {
         super(errorCode.getStatusMessage());
         this.errorCode = errorCode;
         this.detailMessage = errorCode.getStatusMessage();
