@@ -1,4 +1,4 @@
-package me.yunchat.domain.web.exception;
+package me.yunchat.web.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
