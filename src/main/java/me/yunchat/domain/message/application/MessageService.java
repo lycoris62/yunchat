@@ -1,6 +1,7 @@
 package me.yunchat.domain.message.application;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.yunchat.domain.channel.dao.ChannelRepository;
 import me.yunchat.domain.channel.domain.Channel;
 import me.yunchat.domain.message.dao.MessageRepository;
@@ -11,6 +12,7 @@ import me.yunchat.domain.user.dao.UserRepository;
 import me.yunchat.domain.user.domain.User;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MessageService {
@@ -20,6 +22,8 @@ public class MessageService {
     private final ChannelRepository channelRepository;
 
     public ChatResponseDto addMessage(ChatRequestDto chatRequestDto) {
+
+        log.info("nickname={}, channelName={}, message={}", chatRequestDto.getNickname(), chatRequestDto.getChannelName(), chatRequestDto.getMessage());
 
         User user = userRepository.findByNickname(chatRequestDto.getNickname())
                 .orElseThrow(() -> new IllegalArgumentException("닉네임 불읾치"));
