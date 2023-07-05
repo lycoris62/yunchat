@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -73,7 +74,7 @@ public class SecurityConfig {
             LoginUserDetails loginUserDetails = (LoginUserDetails) authentication.getPrincipal();
             User loginUser = loginUserDetails.getUser();
             updateUserLoginTime(loginUser);
-            response.sendRedirect("/profile/" + loginUser.getNickname());
+            response.sendRedirect("/channel/home");
         };
     }
 
