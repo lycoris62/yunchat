@@ -1,8 +1,7 @@
 package me.yunchat.web.controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import me.yunchat.web.application.LoginService;
+import me.yunchat.domain.user.application.SignUpService;
 import me.yunchat.web.dto.SignUpRequestDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,12 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class SignController {
 
-    private final LoginService loginService;
+    private final SignUpService signUpService;
 
     @GetMapping("/login")
     public String loginPage() {
@@ -30,7 +28,7 @@ public class SignController {
 
     @PostMapping("/signup")
     public String signup(@ModelAttribute("signUpRequestDto") SignUpRequestDto request) {
-        loginService.signup(request);
-        return "redirect:/login";
+        boolean isSignUp = signUpService.signup(request.toSignUpDto());
+        return isSignUp ? "redirect:/login" : "/signup";
     }
 }
