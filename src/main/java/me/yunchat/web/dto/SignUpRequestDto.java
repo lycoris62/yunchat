@@ -1,4 +1,4 @@
-package me.yunchat.domain.web.dto;
+package me.yunchat.web.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

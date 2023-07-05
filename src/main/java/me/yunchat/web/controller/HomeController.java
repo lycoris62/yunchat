@@ -1,4 +1,4 @@
-package me.yunchat.domain.web.controller;
+package me.yunchat.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import me.yunchat.domain.channel.dao.ChannelRepository;

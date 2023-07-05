@@ -1,4 +1,4 @@
-package me.yunchat.domain.web.application;
+package me.yunchat.web.application;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -6,9 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import me.yunchat.domain.user.application.UserService;
 import me.yunchat.domain.user.domain.User;
 import me.yunchat.domain.user.dto.UserSaveDto;
-import me.yunchat.domain.web.exception.NotSamePasswordException;
-import me.yunchat.domain.web.dto.SignUpRequestDto;
-import me.yunchat.domain.web.exception.LoginErrorCode;
+import me.yunchat.web.exception.NotSamePasswordException;
+import me.yunchat.web.dto.SignUpRequestDto;
+import me.yunchat.web.exception.LoginErrorCode;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

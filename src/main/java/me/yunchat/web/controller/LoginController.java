@@ -1,9 +1,9 @@
-package me.yunchat.domain.web.controller;
+package me.yunchat.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import me.yunchat.domain.web.application.LoginService;
-import me.yunchat.domain.web.dto.SignUpRequestDto;
+import me.yunchat.web.application.LoginService;
+import me.yunchat.web.dto.SignUpRequestDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
