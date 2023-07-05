@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-public class LoginController {
+public class SignController {
 
     private final LoginService loginService;
 
