@@ -12,7 +12,8 @@ public class EnterChannelService {
     private final ChannelRepository channelRepository;
 
     public String enter(String channelName) {
-        Channel channel = channelRepository.findByChannelName(channelName).orElseGet(() -> new Channel(channelName));
+        Channel channel = channelRepository.findByChannelName(channelName)
+                .orElseGet(() -> channelRepository.save(new Channel(channelName)));
         return channel.getChannelName();
     }
 }
