@@ -66,4 +66,4 @@ jobs:
           sudo docker rm -f $(docker ps -qa)
           sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/example-repo-01 
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/example-repo-01 
-          docker run -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/example-repo-01 
+          docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/example-repo-01 
